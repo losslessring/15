@@ -19,9 +19,15 @@ console.log(field)
 let display_field = new DisplayField(document.getElementById("container"), 
 	field.rows, field.cols, 'cell')
 
+
 const displayUpdate = function() {
-	display_field.colorize(field.cells, "deepSkyBlue")
-	display_field.update(field.cells, "value", -1,"black")
+
+	display_field.colorize(field.cells, "backgroundColor", "#32526d")
+	display_field.colorize(field.cells, "color", "#a8b1bb")
+	
+
+	display_field.updateCssProperty(field.cells, "value", -1,"backgroundColor","#2f2f2f")
+	display_field.updateCssProperty(field.cells, "value", -1,"color","#2f2f2f")
 	display_field.showValue(field.cells, "value")
 }
 
@@ -35,7 +41,7 @@ document.querySelectorAll('.cell').forEach( (element) =>{
 	element.addEventListener('click', function(){
 		//console.log(parseInt(this.innerText ))
 		let i = field.findIndex('value', parseInt(this.innerText))
-		field.swap([ i-cols, i+1, i+cols, i-1 ], i)
+		field.swap(i)
 
 		displayUpdate()
 

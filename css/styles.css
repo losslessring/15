@@ -1,6 +1,6 @@
 html, body{
  margin: 100;
- background-color: white;
+ background-color: #2f2f2f;
 }
 
 
@@ -16,19 +16,29 @@ html, body{
   /*grid-gap: 5px;*/
   grid-template-rows: repeat(var(--grid-rows), 1fr);
   grid-template-columns: repeat(var(--grid-cols), 1fr);
-  border: 5px solid #ddd;
+  border: 5px solid #a8b1bb;
 
 }
 
 .cell {
-  padding: 0.3em;
-  font-size: 1em;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family:arial;
+  color: #a8b1bb;
+  font-size: 2em;
+
+  /*padding: 0.3em;*/
+  
   width: 3em;
   height: 3em;
   /*border: 1px solid #ddd;*/
   text-align: center;
   margin: 0.5px;
   /*border-radius: 5px;*/
+
 
 }
 

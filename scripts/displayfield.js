@@ -29,12 +29,12 @@ export default class DisplayField {
         }
     }
     
-    colorize(array, color){
+    colorize(array, cssProperty, cssValue){
         //console.log(array)
         if (array.length == this.cells.length){
 
-            for (let i = 0; i < array.length; i++) {
-                this.cells[i].style.backgroundColor = color
+            for (let i = 0; i < array.length; i++) {                
+                this.cells[i].style[cssProperty] = cssValue
             }
         }
     }
@@ -48,20 +48,21 @@ export default class DisplayField {
     }
 
     // Update colors based on array values    
-    update(array, property, value, color){
+    updateCssProperty(array, property, value, cssProperty, cssValue){
         
         if (array.length == this.cells.length){
             for (let i = 0; i < array.length; i++) {
                 
                 
                 if(array[i][property] === value){
-                    if(color){
-                        this.cells[i].style.backgroundColor = color
-                    }
+                
+                    this.cells[i].style[cssProperty] = cssValue
+                
                 }                                
             }
         }
     }
+
 
 }
 

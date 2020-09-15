@@ -62,8 +62,11 @@ export default class Field {
 	}
 
 
-	// Ищем крестом - в метод передается массив, где смотреть соседние клетки
-	swap(array, center){
+	
+	swap(center){
+		// Ищем крестом - вот массив, где смотреть соседние клетки
+		const array = [ center - this.cols, center + 1, center + this.cols, center - 1 ]
+		
 		let targetIndex = undefined
 		for (let i = 0; i < array.length; i++){
 			// Проверка, находится ли элемент на краю,
