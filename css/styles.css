@@ -1,19 +1,20 @@
 html, body{
- margin: 100;
+ margin: 50;
  background-color: #2f2f2f;
 }
 
 
 #align-to-center {
+
 	display: grid;
 	justify-content: center;
 	align-items: center;
- 	position: relative;
+ 	
 }
 
 #container {
   display: grid;
-  /*grid-gap: 5px;*/
+  
   grid-template-rows: repeat(var(--grid-rows), 1fr);
   grid-template-columns: repeat(var(--grid-cols), 1fr);
   border: 5px solid #a8b1bb;
@@ -30,14 +31,14 @@ html, body{
   color: #a8b1bb;
   font-size: 2em;
 
-  /*padding: 0.3em;*/
+
   
   width: 3em;
   height: 3em;
-  /*border: 1px solid #ddd;*/
+
   text-align: center;
   margin: 0.5px;
-  /*border-radius: 5px;*/
+
 
 
 }

@@ -14,7 +14,7 @@ const rows = 4
 const cols = 4
 
 let field = new Field(rows, cols)
-console.log(field)
+
 
 let display_field = new DisplayField(document.getElementById("container"), 
 	field.rows, field.cols, 'cell')
@@ -31,6 +31,9 @@ const displayUpdate = function() {
 	display_field.showValue(field.cells, "value")
 }
 
+
+field.shuffle(rows * cols * 100)
+
 displayUpdate()
 
 
@@ -39,7 +42,7 @@ displayUpdate()
 
 document.querySelectorAll('.cell').forEach( (element) =>{
 	element.addEventListener('click', function(){
-		//console.log(parseInt(this.innerText ))
+		
 		let i = field.findIndex('value', parseInt(this.innerText))
 		field.swap(i)
 
