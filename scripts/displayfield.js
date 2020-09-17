@@ -1,6 +1,6 @@
 
 
-export default class DisplayField {
+class DisplayField {
 
     constructor (container, rows, cols, class_name) {
         

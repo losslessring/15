@@ -5,9 +5,6 @@
 // и сделать пересчет массива.
 
 
-import Field from './field.js'
-
-import DisplayField from './displayfield.js'
 
 
 const rows = 4
@@ -50,3 +47,50 @@ document.querySelectorAll('.cell').forEach( (element) =>{
 
 	})
 })
+
+
+document.onkeydown = function(e){
+        
+    if (e.repeat) { return }
+        
+        switch(e.keyCode){
+        	
+        	case 37:                
+                
+                let index_minus = field.findIndex("value", -1) - 1
+                
+            	if (index_minus >= 0){
+        	    	field.swap(index_minus)
+                	displayUpdate()
+            	}
+            	break
+            case 38:
+        	    
+            	let index_down = field.findIndex("value", -1) - cols
+            	
+            	if (index_down >= 0){
+        	    	field.swap(index_down)
+                	displayUpdate()
+            	}
+            	break
+
+            case 39:
+            	
+                let index_plus = field.findIndex("value", -1) + 1
+                
+            	if (index_plus < field.cells.length){
+        	    	field.swap(index_plus)
+                	displayUpdate()
+            	}
+            	break
+            case 40:
+            	
+            	let index_up = field.findIndex("value", -1) + cols
+            	
+            	if (index_up < field.cells.length){
+        	    	field.swap(index_up)
+                	displayUpdate()
+            	}
+            	break
+        }
+}

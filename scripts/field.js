@@ -1,4 +1,4 @@
-export default class Field {
+class Field {
     constructor(rows = 10, cols = 10){
 		this.rows = rows;
         this.cols = cols;
